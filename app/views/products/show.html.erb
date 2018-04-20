@@ -5,6 +5,18 @@
   :data => {:confirm => "Are you sure?",
     :method => "delete"} %></p>
 
+<% if @product.reviews.any? %>
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <li><%= review.content_body %> |
+        <%=link_to "Edit Review", edit_product_review_path(@product, review) %> |
+        <%=link_to "Delete", product_review_path(@product, review),
+          :data => {:confirm => "Are you sure?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet</p>
+<% end %>
 
-
-<p>add link</p>
+<p><%= link_to "Add new review", new_product_review_path(@product) %></p>
