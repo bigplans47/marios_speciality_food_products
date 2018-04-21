@@ -1,18 +1,19 @@
-<p>test land</p>
-
-<p>Our Most reviewed Product</p>
-<%= @top_product[0].name %>
-
-<p>Our 3 most recently added products</p>
-<%= @three_most_recent_products.each do |t| %>
-   <p><%= t.name %></p>
+<div class='jumbotron'>
+  <h1>Mario's Speciality Food Products</h1>
+  <h2>WHO WE ARE</h2>
+  <h4>Two families,<br>Two generations,<br>Two languages</h4>
+  <p>Our company is comprised of two local families and two generations who are joined together by the same mission of supporting our customers with naturally fresh, kettle cooked foods for retail and food service operations. Our team collaborates in person on a daily basis to assure our mission has been served with each and every product we make.</p>
+</div>
+<button class=" btn btn-success"><%= link_to "See our products", products_path %></button>
+<p>Our Most Reviewed Product</p>
+<%= link_to @top_product[0].name, product_path(@top_product[0]) %>
+<hr>
+<p>Our 3 Newest Products</p>
+<% @three_most_recent_products.each do |single| %>
+   <p><%= link_to single.name, product_path(single) %> </p>
 <% end %>
-
-<p>Made in USA</p>
-<%= @made_in_usa.each do |t| %>
-   <p><%= t.country_of_origin %></p>
+<hr>
+<p>Made in USA Proucts</p>
+<% @made_in_usa.each do |single| %>
+   <p><%= link_to single.name, product_path(single) %></p>
 <% end %>
-
-<p><%= link_to "See our products", products_path %></p>
-
-The landing page should include basic information about the company and should allow users to easily navigate to other areas of the site. This page should also include the three most recently added products and the product with the most reviews. See more information in the Scopes section below.
