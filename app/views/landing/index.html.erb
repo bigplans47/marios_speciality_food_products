@@ -1,0 +1,18 @@
+<p>test land</p>
+
+<p>Our Most reviewed Product</p>
+<%= @top_product[0].name %>
+
+<p>Our 3 most recently added products</p>
+<%= @three_most_recent_products.each do |t| %>
+   <p><%= t.name %></p>
+<% end %>
+
+<p>Made in USA</p>
+<%= @made_in_usa.each do |t| %>
+   <p><%= t.country_of_origin %></p>
+<% end %>
+
+<p><%= link_to "See our products", products_path %></p>
+
+The landing page should include basic information about the company and should allow users to easily navigate to other areas of the site. This page should also include the three most recently added products and the product with the most reviews. See more information in the Scopes section below.

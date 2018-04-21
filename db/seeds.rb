@@ -5,8 +5,6 @@ Product.destroy_all
   @product = Product.new(:name => Faker::Food.dish, :cost => Faker::Number.between(1,15), :country_of_origin =>'USA')
   if @product[:cost] > 8
     @product[:country_of_origin] = 'France'
-    # @product.update(@product) {}
-    # @product[:country_of_origin] = 'France'
   end
   @product.save!
   5.times do |z|
