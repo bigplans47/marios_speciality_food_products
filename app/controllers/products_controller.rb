@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    render :edit
   end
 
   def update

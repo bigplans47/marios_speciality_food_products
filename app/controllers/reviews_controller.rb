@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
   end
+
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
@@ -16,19 +17,16 @@ class ReviewsController < ApplicationController
 
   def index
     @products = Product.all
-    render :index
   end
 
   def show
     @product = Product.find(params[:id])
     @review = Review.find(params[:id])
-    render :show
   end
 
   def edit
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
-    render :edit
   end
 
   def update
