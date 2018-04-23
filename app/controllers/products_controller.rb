@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    # __binding__.pry
   end
 
   def show
