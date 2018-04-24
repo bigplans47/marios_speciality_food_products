@@ -6,9 +6,11 @@
 </div>
 <button class="btn btn-warning"><%= link_to "See our products", products_path %></button>
 <hr>
-<p>Our Most Reviewed Product</p>
-<%= link_to @top_product[0].name, product_path(@top_product[0]) %>
-<hr>
+<% if @top_product[0] %>
+  <p>Our Most Reviewed Product</p>
+  <%= link_to @top_product[0].name, product_path(@top_product[0]) %>
+  <hr>
+<% end %>
 <p>Our 3 Newest Products</p>
 <% @three_most_recent_products.each do |single| %>
    <p><%= link_to single.name, product_path(single) %> </p>
