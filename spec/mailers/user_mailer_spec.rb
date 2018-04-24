@@ -2,7 +2,9 @@ require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
   describe "signup_confirmation" do
-    let(:mail) { UserMailer.signup_confirmation }
+    user = FactoryBot.create(:user)
+    p user
+    let(:mail) { UserMailer.signup_confirmation(user) }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Signup confirmation")
