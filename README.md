@@ -31,6 +31,8 @@ Prepare Test Enviornment $ rake db:test:prepare
 
 To see passing testing run $ rspec
 
+To run the test again with a cleared test database do 1)$rake db:test:prepare 2)$rspec
+
 To create a preview site with dummy values loaded in run $ rake db:seed
 
 To launch the preview site run $ rails server
